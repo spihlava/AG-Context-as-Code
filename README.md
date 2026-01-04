@@ -1,5 +1,5 @@
 # Antigravity Context & Lifecycle Protocol
-> REVISION 5 | Expert Personas & Maturity Workflows
+> REVISION 6 | Expert Personas & Maturity Workflows
 
 ---
 
@@ -35,7 +35,7 @@ You are not just writing code; you are managing a living project lifecycle. Ever
 
 ```
 .antigravity/
-├── system-prompts.md       ← Agent system instructions
+├── system-prompt.md        ← Agent system instructions
 ├── context/
 │   ├── product.md          ← Vision and value proposition
 │   ├── guidelines.md       ← UX/UI principles and constraints
@@ -61,7 +61,7 @@ You are not just writing code; you are managing a living project lifecycle. Ever
 
 ## 3. System Protocol
 
-> **Copy this section to `.antigravity/system-protocol.md`**
+> **Copy this section to `.antigravity/system-prompt.md`**
 
 ### Core Principle
 
@@ -139,7 +139,7 @@ Instead of waiting for user approval on small tasks, the Agent may:
 
 If returning to a project after a break:
 
-1. Read `system-protocol.md`
+1. Read `system-prompt.md`
 2. Read all files in `context/`
 3. Check `tracks/` for any in-progress work
 4. Read the `status.md` of active tracks
@@ -403,7 +403,7 @@ Instead of separate rule files, add specific language/library constraints direct
 ### 8.1 Minimal Setup
 1. Create `.antigravity/context/product.md` (Vision)
 2. Create `.antigravity/context/stack.md` (Tech)
-3. Create `.antigravity/system-prompts.md` (Copy "System Protocol" here)
+3. Create `.antigravity/system-prompt.md` (Copy "System Protocol" here)
 
 ### 8.2 System Prompt Integration
 **Question:** *Should this be in the System Prompt?*
