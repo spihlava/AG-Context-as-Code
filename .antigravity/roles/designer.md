@@ -16,6 +16,8 @@
   - Component specifications
   - Typography and color choices (with rationale)
 
+*Format is freeform based on project needs. No template required.*
+
 ## Decision Rules
 
 | Situation | Action |

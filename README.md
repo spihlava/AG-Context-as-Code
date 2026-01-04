@@ -1,5 +1,5 @@
 # Antigravity Context & Lifecycle Protocol
-> REVISION 1 | Prototyping & Vibe Coding Edition
+> REVISION 4 | Expert Personas & Maturity Workflows
 
 ---
 
@@ -35,7 +35,7 @@ You are not just writing code; you are managing a living project lifecycle. Ever
 
 ```
 .antigravity/
-├── system-protocol.md      ← This file (or extract the protocol section)
+├── system-prompts.md       ← Agent system instructions
 ├── context/
 │   ├── product.md          ← Vision and value proposition
 │   ├── guidelines.md       ← UX/UI principles and constraints
@@ -46,6 +46,10 @@ You are not just writing code; you are managing a living project lifecycle. Ever
 │   ├── builder.md          ← Implementation role
 │   ├── reviewer.md         ← Code review role
 │   └── tester.md           ← Verification role
+├── templates/
+│   ├── spec.md             ← Specification template
+│   ├── plan.md             ← Implementation plan template
+│   └── status.md           ← Status tracking template
 └── tracks/
     └── [track-name]/
         ├── spec.md         ← What we're building
@@ -69,17 +73,23 @@ You are managing a living project lifecycle. The repository is the single source
 ### Before Any Work
 
 1. Read `.antigravity/context/` files to understand the project
-2. Check if a relevant role is specified—if so, adopt it fully
+2. Check if a relevant role is specified—if so, **read the corresponding `.antigravity/roles/{role}.md` file completely** before acting
+3. Check the **Maturity** level in `product.md` to determine testing and approval requirements
 
 ### Project Maturity & Testing
 
 **How to Use:**
-1. Add to `product.md`: `## Maturity: Alpha`
+1. Add to `product.md`: `## Maturity: Alpha / Beta / Release`
 2. Agent reads this before starting work
-3. Adjust testing requirements based on maturity:
-   - **Alpha (Prototyping):** Testing optional. Speed prioritized.
-   - **Beta (Feature Complete):** Testing required for critical paths.
-   - **Release (Production):** Strict testing coverage required.
+3. **Workflow Adjustments:**
+
+| Maturity | Focus | Testing | Approval |
+|:---|:---|:---|:---|
+| **Alpha** | Speed & Exploration | Happy Path Only | **Ghost Review Allowed** (?) |
+| **Beta** | Feature Completeness | Critical Paths | Standard User Gate |
+| **Release** | Reliability & Security | Full Coverage | Strict Sign-off |
+
+*(?): See "Ghost Review" in Approval Gates below.*
 
 
 ### Track-Based Work
@@ -98,6 +108,14 @@ All non-trivial work happens in tracks:
 - Changing tech stack or architecture
 - Deleting files or reverting changes
 - Any destructive git operations
+
+👻 **Ghost Review (Self-Correction):**
+*Only available in **Alpha** maturity.*
+Instead of waiting for user approval on small tasks, the Agent may:
+1. Adopt the **Reviewer** persona.
+2. Critique its own work (Spec/Plan/Code).
+3. If no critical issues found, Mark as "Self-Approved".
+4. Proceed immediately.
 
 ### Handover Points
 
@@ -314,8 +332,15 @@ Instead of separate rule files, add specific language/library constraints direct
 
 ### 6.1 Standard Track (Features)
 **For non-trivial work (> 2 hours).**
-- **Structure:** `.antigravity/tracks/[track-name]/` containing `spec.md`, `plan.md`, `status.md`.
-- **Flow:** Spec → Plan → **Approval** → Implementation → Review → **Verification** → Complete.
+
+**Structure:** `.antigravity/tracks/[track-name]/`
+- `spec.md` — What we're building (use template: `.antigravity/templates/spec.md`)
+- `plan.md` — How we'll build it (use template: `.antigravity/templates/plan.md`)
+- `status.md` — Current state (copy of `plan.md` with updated checkboxes)
+
+**Flow:** Spec → Plan → **Approval** → Implementation → Review → **Verification** → Complete.
+
+**Templates:** Located in `.antigravity/templates/`. Copy and customize for each track.
 
 ### 6.2 Hotfix Track (Fast Lane)
 **For quick fixes, tweaks, or simple bugs (< 2 hours).**

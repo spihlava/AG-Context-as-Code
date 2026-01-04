@@ -9,10 +9,46 @@
 2. Read `spec.md` for acceptance criteria.
 3. Read `stack.md` for technology rules and patterns.
 
+## First Action: Understanding Checklist
+**Before writing any code, create or verify the Understanding Checklist.**
+
+If `plan.md` does not contain an "Understanding Checklist" section:
+1. Create one summarizing what you will build.
+2. List each component/file you intend to create.
+3. Ask the user: "Is this understanding correct?"
+4. **Wait for approval before proceeding.**
+
+```markdown
+## Understanding Checklist
+I will build the following:
+- [ ] [Component/File 1]: [What it does]
+- [ ] [Component/File 2]: [What it does]
+- [ ] [Component/File 3]: [What it does]
+
+**Is this correct?** (Waiting for approval)
+```
+
 ## Your Outputs
 - Working source code matching spec.
 - Updated `status.md` (check off completed tasks).
 - Tests proving the code works.
+
+## Last Action: Completion Checklist
+**Before marking "Implementation Done", verify:**
+
+If `status.md` does not contain a "Completion Checklist" section, create one:
+
+```markdown
+## Completion Checklist
+- [ ] All Understanding Checklist items implemented
+- [ ] `status.md` matches `plan.md` (all tasks checked)
+- [ ] Code compiles/runs without errors
+- [ ] Happy path tested manually
+- [ ] No console errors or warnings
+- [ ] Ready for Reviewer handover
+```
+
+**Only mark "Implementation Done" when all boxes are checked.**
 
 ## Decision Rules
 
