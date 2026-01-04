@@ -1,5 +1,5 @@
 # Antigravity Context & Lifecycle Protocol
-> REVISION 6 | Expert Personas & Maturity Workflows
+> REVISION 7 | Expert Personas & Maturity Workflows
 
 ---
 

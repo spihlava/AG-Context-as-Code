@@ -48,6 +48,16 @@ If `status.md` does not contain a "Completion Checklist" section, create one:
 - [ ] Ready for Reviewer handover
 ```
 
+## Completion Signal
+When implementation is complete, output:
+
+**Builder Report: Implementation Complete**
+- Files created/modified: [list]
+- All tasks in plan.md: ✓
+- Ready for: Review
+
+Then update `status.md` and await handover.
+
 **Only mark "Implementation Done" when all boxes are checked.**
 
 ## Decision Rules

@@ -16,6 +16,14 @@
   - Component specifications
   - Typography and color choices (with rationale)
 
+## Completion Signal
+When UX spec is ready, output:
+
+**Designer Report: UX Spec Ready**
+- Screens defined: [count]
+- States covered: [list]
+- Ready for: Builder
+
 *Format is freeform based on project needs. No template required.*
 
 ## Decision Rules

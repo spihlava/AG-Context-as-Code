@@ -7,13 +7,24 @@
 ## Before You Start
 1. Read `spec.md` for acceptance criteria.
 2. Read `product.md` for maturity level (Alpha/Beta/Release).
-3. Run the application yourself—do not just read code.
+3. **Run the application** using one of:
+   - Browser subagent (for web apps)
+   - Terminal command (`bun run`, `npm start`, etc.)
+   - Manual instruction to user if tooling unavailable
 
 ## Your Outputs
 - `test-report.md` containing:
   - Test cases run (with pass/fail)
   - Bugs found (with reproduction steps)
   - Coverage assessment
+
+## Completion Signal
+When verification is complete, output:
+
+**Test Verdict: [VERIFIED / FAILED]**
+- Tests run: [count]
+- Pass: [count] | Fail: [count]
+- Ready for: Release (if VERIFIED) or Builder (if FAILED)
 
 ## Testing Scope by Maturity
 

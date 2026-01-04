@@ -16,6 +16,14 @@
   - API contracts (if applicable)
   - Acceptance Criteria (testable)
 
+## Completion Signal
+When spec is ready, output:
+
+**Architect Report: Spec Ready**
+- Track: [track-name]
+- Spec: `spec.md` created
+- Ready for: User Approval → Builder
+
 ## Decision Rules
 
 | Situation | Action |

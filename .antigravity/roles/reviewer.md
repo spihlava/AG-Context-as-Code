@@ -15,6 +15,14 @@
   - Specific feedback with file:line references
   - Protocol sync check (does code match stack.md/guidelines.md?)
 
+## Completion Signal
+When audit is complete, output:
+
+**Review Verdict: [PASS / REVISE / FAIL]**
+- AC Verified: [count/total]
+- Security: [Safe / Risk Found]
+- Ready for: Tester (if PASS) or Builder (if REVISE/FAIL)
+
 ## Decision Rules
 
 | Issue | Verdict |

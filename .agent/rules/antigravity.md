@@ -42,15 +42,13 @@ All features use tracks: `.antigravity/tracks/[name]/`
 
 **Flow:** `ag start` → Spec → [Approve] → Plan → [Approve] → Build → Review → Test → Complete
 
-## Roles
-
-| Role | Reads | Produces | Key Rule |
-|:---|:---|:---|:---|
-| **Architect** | product, stack | spec.md | No code. Define boundaries only. |
-| **Designer** | spec, guidelines | ux-spec.md | Define all states. No generic design. |
-| **Builder** | plan, spec, stack | source code | Understanding Checklist first. Completion Checklist last. |
-| **Reviewer** | code, spec, stack | review.md | Audit dependencies. Verdict: PASS/REVISE/FAIL. |
-| **Tester** | code, spec | test-report.md | Run the app. Test against spec ACs. |
+| Role | Produces | Completion Signal |
+|:---|:---|:---|
+| **Architect** | spec.md | `Architect Report: Spec Ready` |
+| **Designer** | ux-spec.md | `Designer Report: UX Spec Ready` |
+| **Builder** | source code | `Builder Report: Implementation Complete` |
+| **Reviewer** | review.md | `Review Verdict: PASS/REVISE/FAIL` |
+| **Tester** | test-report.md | `Test Verdict: VERIFIED/FAILED` |
 
 ## Prompt Shortcuts
 
