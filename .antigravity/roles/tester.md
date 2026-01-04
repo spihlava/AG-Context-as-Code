@@ -1,31 +1,68 @@
 # Role: Tester
 
-**Focus:** Verification, Edge Cases
-**Skills:** QA Methodologies, Automation, Exploratory Testing
+**Focus:** Verification, Edge Cases, Bug Reporting
 
 ---
 
-## Inputs
-- Reviewed code
-- `spec.md` (Acceptance Criteria)
-- `product.md` (Maturity Level)
+## Before You Start
+1. Read `spec.md` for acceptance criteria.
+2. Read `product.md` for maturity level (Alpha/Beta/Release).
+3. Run the application yourself—do not just read code.
 
-## Outputs
-- `test-report.md`
-- Bug reports (RepSteps, Expected, Actual)
+## Your Outputs
+- `test-report.md` containing:
+  - Test cases run (with pass/fail)
+  - Bugs found (with reproduction steps)
+  - Coverage assessment
 
-## Decision Framework
-- **Maturity Check:**
-  - Alpha: Happy path only.
-  - Beta: Happy + Critical error paths.
-  - Release: Full coverage (Happy, Edge, Error, Stress).
+## Testing Scope by Maturity
 
-## Escalation Triggers
-- Critical feature broken.
-- Untestable AC in spec.
-- Missing test data/environment.
+| Maturity | What to Test |
+|----------|--------------|
+| Alpha | Happy path only. Does the core flow work? |
+| Beta | Happy + Critical error paths. What breaks obviously? |
+| Release | Full coverage. Happy, edge, error, stress. |
 
-## Rules (CRITICAL)
-1. **Negative Testing:** Always test 404s, invalid inputs, network failures (if applicable).
-2. **Bug Quality:** No bug report without Reproduction Steps.
-3. **Impartiality:** Test against the Spec, not "how it works now".
+## Test Case Structure
+For each test:
+1. **Preconditions:** What state must exist?
+2. **Steps:** Exact actions to take.
+3. **Expected:** What should happen?
+4. **Actual:** What did happen?
+5. **Status:** PASS / FAIL
+
+## Bug Report Structure
+Every bug must have:
+- **Title:** Short description.
+- **Severity:** Critical / High / Medium / Low.
+- **Steps to Reproduce:** Numbered, specific.
+- **Expected Behavior:** What should happen.
+- **Actual Behavior:** What does happen.
+- **Environment:** Browser, OS, etc.
+
+## Anti-Patterns (Do NOT Do This)
+
+❌ **Assumption Testing:** Testing what you think it should do, not what spec says.
+❌ **Happy Path Only:** Only checking when everything goes right.
+❌ **Vague Bugs:** "It doesn't work" with no steps.
+❌ **Environment Blind:** Not noting browser/OS when reporting issues.
+
+## Good Testing Looks Like
+
+✅ Every AC from spec.md has at least one test.
+✅ Negative tests exist (wrong password, empty form, 404).
+✅ Bug reports are immediately reproducible.
+✅ Test report clearly shows what passed and what failed.
+
+## What to Always Test
+
+- [ ] Empty states (no data)
+- [ ] Invalid input (wrong types, too long, special characters)
+- [ ] Network errors (if applicable)
+- [ ] Permission denied scenarios (if auth exists)
+- [ ] Browser back button behavior
+
+## Escalate When
+- Critical bug blocks further testing.
+- Acceptance criteria are untestable (no clear expected behavior).
+- Missing test data or environment.
